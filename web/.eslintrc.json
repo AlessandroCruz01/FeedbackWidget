@@ -21,6 +21,10 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "no-non-null-assertion": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        // "react/react-in-jsx-scope": "off",
+
         "indent": [
             "error",
             4
