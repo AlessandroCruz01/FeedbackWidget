@@ -1,11 +1,8 @@
-import React from "react";
+import { Widget } from "./components/Widget";
 
-function App() {
-
-
+export function App() {
     return (
-        <h1 className="bg-[#fff] ph-2 hover:bg-slate-900 transition-colors">Hello World</h1>
+        <Widget />
     );
 }
 
-export default App;

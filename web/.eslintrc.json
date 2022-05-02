@@ -24,6 +24,8 @@
         "no-non-null-assertion": "off",
         "@typescript-eslint/no-non-null-assertion": "off",
         "no-undef": "off",
+        "jsx-eslint/eslint-plugin-react": "off",
+        "react/react-in-jsx-scope": "off",
 
         "indent": [
             "error",
