@@ -1,4 +1,5 @@
 import { FeedBackType, feedBackTypes } from "..";
+import { CloseButton } from "../../CloseButton";
 
 interface FeedbackTypeStepProps {
 
@@ -6,16 +7,23 @@ interface FeedbackTypeStepProps {
 }
 
 export function FeedbackTypeStep({onFeedbackTypeChanged}:FeedbackTypeStepProps ){
+    
     return(
-        <div className="flex py-8 gap-2 w-full">
+        <>
+            <header>
+                <CloseButton />
+                <span className="text-xl leading-6">Deixe seu feedback</span>
+            </header>
 
-            { Object.entries(feedBackTypes).map(([key, value]) => {
+            <div className="flex py-8 gap-2 w-full">
 
-                return(
+                { Object.entries(feedBackTypes).map(([key, value]) => {
 
-                    <button
-                        key={key}
-                        className="
+                    return(
+
+                        <button
+                            key={key}
+                            className="
                                 bg-zinc-800 
                                 rounded-lg 
                                 py-5 
@@ -31,18 +39,18 @@ export function FeedbackTypeStep({onFeedbackTypeChanged}:FeedbackTypeStepProps )
                                 focus:border-brand-500
                                 focus:outline-none
                             "
-                        type="button"
-                        onClick={() => onFeedbackTypeChanged(key as FeedBackType)}
-                    >
+                            type="button"
+                            onClick={() => onFeedbackTypeChanged(key as FeedBackType)}
+                        >
 
-                        <img src={value.image.source} alt={value.image.alt} />
-                        <span>{value.title}</span>
-                    </button>
-                );
+                            <img src={value.image.source} alt={value.image.alt} />
+                            <span>{value.title}</span>
+                        </button>
+                    );
 
-            }) }
+                }) }
 
-        </div>
-
+            </div>
+        </>
     );
 }

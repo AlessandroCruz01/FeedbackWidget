@@ -5,6 +5,7 @@ import ideaImageUrl from "../../assets/idea.svg";
 import thoughtImageUrl from "../../assets/thought.svg";
 import { useState } from "react";
 import { FeedbackTypeStep } from "./Steps/FeedbackTypeStep";
+import { FeedbackContentStep } from "./Steps/FeedbackContentStep";
 
 export const feedBackTypes = {
     BUG: {
@@ -57,15 +58,10 @@ export function WidgetForm() {
             "
         > 
             
-            <header>
-                <CloseButton />
-                <span className="text-xl leading-6">Deixe seu feedback</span>
-            </header>
-
             {!feedBackType ? (
                 <FeedbackTypeStep onFeedbackTypeChanged={setFeedBackType}/>
             ) : (
-                <p>Hello World</p>
+                <FeedbackContentStep />
             )}
 
             
