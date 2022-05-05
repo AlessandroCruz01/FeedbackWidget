@@ -42,6 +42,10 @@ export function WidgetForm() {
 
     const [feedBackType, setFeedBackType] = useState<FeedBackType | null>(null);
 
+    function handleRestartFeedback() {
+        setFeedBackType(null);
+    }
+
     return(
 
         <div 
@@ -61,7 +65,7 @@ export function WidgetForm() {
             {!feedBackType ? (
                 <FeedbackTypeStep onFeedbackTypeChanged={setFeedBackType}/>
             ) : (
-                <FeedbackContentStep />
+                <FeedbackContentStep feedbackType={feedBackType} onFeedbackRestartRequested={handleRestartFeedback}/>
             )}
 
             
