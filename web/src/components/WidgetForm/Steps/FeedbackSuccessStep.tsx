@@ -38,7 +38,6 @@ export function FeedbackSuccessStep({onFeedbackRestartRequested}: FeedbackSucces
                         focus:ring-offset-2
                         focus:ring-offset-zinc-900
                         focus:ring-brand-500
-                        transition-colors
                         disabled:opacity-50
                         disabled:bg-brand-500
                     "
