@@ -5,8 +5,12 @@ module.exports = {
             colors: {
                 brand: {
                     500: "#8257e6",
-                    300: "996DFF"
+                    300: "#996DFF"
                 }
+            },
+
+            borderRadius: {
+                md: "4px"
             }
         },
     },
