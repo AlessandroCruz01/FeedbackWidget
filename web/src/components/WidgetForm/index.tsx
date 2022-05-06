@@ -1,11 +1,10 @@
-import { CloseButton } from "../CloseButton";
-
 import bugImageUrl from "../../assets/bug.svg";
 import ideaImageUrl from "../../assets/idea.svg";
 import thoughtImageUrl from "../../assets/thought.svg";
 import { useState } from "react";
 import { FeedbackTypeStep } from "./Steps/FeedbackTypeStep";
 import { FeedbackContentStep } from "./Steps/FeedbackContentStep";
+import { FeedbackSuccessStep } from "./Steps/FeedbackSuccessStep";
 
 export const feedBackTypes = {
     BUG: {
@@ -41,8 +40,11 @@ export type FeedBackType = keyof typeof feedBackTypes
 export function WidgetForm() {
 
     const [feedBackType, setFeedBackType] = useState<FeedBackType | null>(null);
+    const [feedbackSent, setFeedbackSent] = useState(false);
 
+    
     function handleRestartFeedback() {
+        setFeedbackSent(false);
         setFeedBackType(null);
     }
 
@@ -61,12 +63,26 @@ export function WidgetForm() {
                 md:w-auto
             "
         > 
-            
-            {!feedBackType ? (
-                <FeedbackTypeStep onFeedbackTypeChanged={setFeedBackType}/>
-            ) : (
-                <FeedbackContentStep feedbackType={feedBackType} onFeedbackRestartRequested={handleRestartFeedback}/>
-            )}
+
+            {/* Fluxo do envio do feedback */}
+            {
+                feedbackSent 
+                    ? (<FeedbackSuccessStep onFeedbackRestartRequested={handleRestartFeedback}/>) 
+                    : (
+                        <>     
+                            {!feedBackType ? (
+                                <FeedbackTypeStep onFeedbackTypeChanged={setFeedBackType}/>
+                            ) : (
+                                <FeedbackContentStep 
+                                    feedbackType={feedBackType} 
+                                    onFeedbackRestartRequested={handleRestartFeedback}
+                                    onFeedbackSent={() => setFeedbackSent(true)}
+                                />
+                            )}
+                        </>
+                    )
+
+            }
 
             
             <footer className="text-xs text-neutral-400">
