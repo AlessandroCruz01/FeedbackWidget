@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.49% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>31/53</span>
+                <span class='fraction'>53/53</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">40% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/5</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.49% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>31/53</span>
+                <span class='fraction'>53/53</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -135,38 +135,38 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">//camada de aplicação
 &nbsp;
 import { MailAdapter } from "../adapters/mail-adapter";
@@ -189,36 +189,36 @@ export class SubmitFeedbackUseCase {
     async execute(request: SubmitFeedbackUseCaseRequest){
         const {type, comment, screenshot} = request;
 &nbsp;
-        if (!type) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            throw new Error("Type is required");</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
+        if (!type) {
+            throw new Error("Type is required");
+        }
 &nbsp;
         
-        if (!comment) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            throw new Error("Comment is required");</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
+        if (!comment) {
+            throw new Error("Comment is required");
+        }
 &nbsp;
         if (screenshot &amp;&amp; !screenshot.startsWith("data:image/png;base64")){
             throw new Error("Invalid screenshot format");
         }
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>
-<span class="cstat-no" title="statement not covered" >        await this.feedbacksRepository.create({</span>
-<span class="cstat-no" title="statement not covered" >            type,</span>
-<span class="cstat-no" title="statement not covered" >            comment,</span>
-<span class="cstat-no" title="statement not covered" >            screenshot</span>
-<span class="cstat-no" title="statement not covered" >        });</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        await this.mailAdapter.sendMail({</span>
-<span class="cstat-no" title="statement not covered" >            subject: "Novo Feedback",</span>
-<span class="cstat-no" title="statement not covered" >            body: [</span>
-<span class="cstat-no" title="statement not covered" >                "&lt;div style=\"font-family: sans-serif\"&gt;",</span>
-<span class="cstat-no" title="statement not covered" >                `&lt;p&gt;Tipo do feedbakc: ${type}&lt;/p&gt;`,</span>
-<span class="cstat-no" title="statement not covered" >                `&lt;p&gt;Comentario: ${comment}&lt;/p&gt;`,</span>
-<span class="cstat-no" title="statement not covered" >                "&lt;/div&gt;",</span>
-<span class="cstat-no" title="statement not covered" >            ].join("\n")</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        });</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+&nbsp;
+        await this.feedbacksRepository.create({
+            type,
+            comment,
+            screenshot
+        });
+&nbsp;
+        await this.mailAdapter.sendMail({
+            subject: "Novo Feedback",
+            body: [
+                "&lt;div style=\"font-family: sans-serif\"&gt;",
+                `&lt;p&gt;Tipo do feedbakc: ${type}&lt;/p&gt;`,
+                `&lt;p&gt;Comentario: ${comment}&lt;/p&gt;`,
+                "&lt;/div&gt;",
+            ].join("\n")
+&nbsp;
+        });
+    }
 }</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -226,7 +226,7 @@ export class SubmitFeedbackUseCase {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Sat May 07 2022 23:15:37 GMT-0500 (Horário Padrão do Acre)
+                at Sun May 08 2022 11:54:09 GMT-0500 (Horário Padrão do Acre)
             </div>
         <script src="prettify.js"></script>
         <script>
